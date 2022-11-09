@@ -1,6 +1,6 @@
 import React from "react";
 import { useLoaderData, Link } from "react-router-dom";
-import logo from '../album-icon.png';
+import logo from "../album-icon.png";
 
 export const loader = async () => {
   const albums = await fetch(
@@ -16,8 +16,10 @@ function Albums() {
       <h1>&nbsp;</h1>
       {albums.map((album) => (
         <Link key={album.id} to={`/albums/${album.id}`}>
-            <img src={logo}/>
-          <span>{album.title}</span>
+          <div className="albumDiv">
+            <img src={logo} className="albumIcon" />
+            <span>{album.title}</span>
+          </div>
         </Link>
       ))}
     </div>

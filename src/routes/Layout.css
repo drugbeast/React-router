@@ -1,0 +1,24 @@
+.all{
+    margin:30px 200px;
+}
+header{
+    display:flex;
+    justify-content: end;
+}
+.navLink, .navLink_active{
+    margin-right:20px;
+}
+.navLink_active{
+    text-decoration: underline;
+}
+main{
+    margin-top:50px;
+}
+footer{
+    margin-top:80px;
+}
+.textBlock{
+    margin-top:30px;
+    display:flex;
+    justify-content: space-between;
+}

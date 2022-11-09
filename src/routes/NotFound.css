@@ -1,0 +1,15 @@
+.notFound{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top:100px;
+}
+.notFound h1{
+    font-size:48px;
+    font-weight:bold;
+}
+.albumsLink{
+    margin-top:40px;
+    font-size:32px;
+    text-decoration: underline;
+}

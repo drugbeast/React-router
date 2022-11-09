@@ -1,0 +1,13 @@
+.albumTitle{
+    margin-top:20px;
+}
+.photosBlock{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:25px;
+}
+.userName{
+    text-decoration: underline;
+    cursor:pointer;
+}

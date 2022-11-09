@@ -6,6 +6,7 @@ import Albums, { loader as albumsLoader } from "./routes/Albums";
 import User, { loader as userLoader } from "./routes/User";
 import Album, { loader as albumLoader } from "./routes/Album";
 import NotFound from "./routes/NotFound";
+import "./App.css";
 
 function App() {
   const router = createBrowserRouter([

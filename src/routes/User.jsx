@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 import { useParams, useLoaderData, Await, Link } from "react-router-dom";
-import logo from '../album-icon.png';
+import logo from "../album-icon.png";
+import "./User.css";
 
 export const loader = ({ params: { id } }) => {
   const userPromise = fetch(
@@ -22,17 +23,13 @@ function Users() {
         {(user) => {
           return (
             <div>
-              <h1>&nbsp;</h1>
-              <div>{user.name}</div>
-              <h1>&nbsp;</h1>
-              <div>Username: {user.username}</div>
-              <div>email: {user.email}</div>
-              <div>Phone: {user.phone}</div>
-              <div>Site: {user.website}</div>
+              <div className="userName">{user.name}</div>
+              <div className="userInf">Username: {user.username}</div>
+              <div className="userInf">email: {user.email}</div>
+              <div className="userInf">Phone: {user.phone}</div>
+              <div className="userInf">Site: {user.website}</div>
 
-              <h1>&nbsp;</h1>
-              <h1>Albums:</h1>
-              <h1>&nbsp;</h1>
+              <h1 className="albumsTitle">Albums:</h1>
             </div>
           );
         }}
@@ -42,8 +39,10 @@ function Users() {
           albums.map((album) =>
             album.userId == id ? (
               <Link key={album.id} to={`/albums/${album.id}`}>
-                <img src={logo} />
-                <div>{album.title}</div>
+                <div className="albumDiv">
+                  <img src={logo} className="albumIcon" />
+                  <span>{album.title}</span>
+                </div>
               </Link>
             ) : null
           )

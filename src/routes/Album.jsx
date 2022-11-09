@@ -1,5 +1,6 @@
 import React, {Suspense} from 'react';
-import {useParams, useLoaderData, Await} from 'react-router-dom';
+import {useParams, useLoaderData, Await, Link} from 'react-router-dom';
+import './Album.css';
 
 export const loader = async ({params: {id}}) => {
     const albumPromise = await fetch(`https://jsonplaceholder.typicode.com/albums/${id}`)
@@ -26,7 +27,7 @@ function Users() {
                     if (album.id == id) {
                         return (
                         <div>
-                            <div>{album.title}</div>
+                            <div className="albumTitle">{album.title}</div>
                         </div>
                         );
                     }
@@ -37,7 +38,7 @@ function Users() {
                 {(user) => {
                     return (
                     <div>
-                        <div>Created By: {user.name}</div>
+                        <div>Created By: <Link className="userName" to={`/users/${albumPromise.userId}`}>{user.name}</Link></div>
                     </div>
                     );
                 }}
@@ -45,9 +46,9 @@ function Users() {
 
             <Await resolve={photosPromise} errorElement={<div>Oops!</div>}>
                 {(photos) => (
-                    <div>
+                    <div className='photosBlock'>
                     {photos.map((photo) => (
-                        <img src={photo.url} key={photo.id} alt=""/>
+                        <img src={photo.thumbnailUrl} key={photo.id} alt=""/>
                     ))}
                     </div>
                 )}
