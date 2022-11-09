@@ -1,5 +1,5 @@
 import React from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import Users, { loader as usersLoader } from "./routes/Users";
 import Layout from "./routes/Layout";
 import Albums, { loader as albumsLoader } from "./routes/Albums";
@@ -9,7 +9,7 @@ import NotFound from "./routes/NotFound";
 import "./App.css";
 
 function App() {
-  const router = createBrowserRouter([
+  const router = createHashRouter([
     {
       path: "/",
       element: <Layout />,
